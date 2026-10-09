@@ -57,7 +57,7 @@
 
   <section class="block narrow" id="install" aria-labelledby="install-title">
     <h2 id="install-title">Install</h2>
-    <p class="lead">About 15 minutes, once. You need Node.js 20 or later, a Google account to host the OAuth client, and an MCP client such as Claude, Codex, Cursor or Gemini CLI.</p>
+    <p class="lead">About 15 minutes, once. You need Node.js 20 or later (or Docker, see below), a Google account to host the OAuth client, and an MCP client such as Claude, Codex, Cursor or Gemini CLI.</p>
     <ol class="steps">
       <li><div><h3>Get the code</h3><p>Clone the repository and build it.</p>
 <pre><span class="p">$ </span>git clone https://github.com/dathims/google-multi-mcp.git
@@ -89,6 +89,25 @@ args = ["/path/to/google-multi-mcp/dist/index.js"]</pre></div>
   }
 }</pre></div></li>
     </ol>
+
+    <div class="card docker-card">
+      <h3 class="with-logo"><img src="../assets/docker.svg" width="24" height="24" alt="">Prefer Docker?</h3>
+      <p>Skip Node.js and the clone: a ready-made image is published for amd64 and arm64. Step 2 (your OAuth client) is still required. Add an account, then copy the URL it prints into your browser:</p>
+<pre><span class="p">$ </span>docker run -it --rm -p 127.0.0.1:8765:8765 \
+    -v ~/.config/google-multi-mcp:/config \
+    ghcr.io/dathims/google-multi-mcp add perso</pre>
+      <p>Then point any MCP client at the image. Set <code class="inline">TZ</code> to your time zone, otherwise the container runs in UTC and event times would shift:</p>
+<pre>{
+  "mcpServers": {
+    "google-multi": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "TZ=Europe/Paris",
+               "-v", "/Users/you/.config/google-multi-mcp:/config",
+               "ghcr.io/dathims/google-multi-mcp"]
+    }
+  }
+}</pre>
+    </div>
   </section>
 
   <section class="block wrap" id="tools" aria-labelledby="tools-title">
@@ -132,7 +151,7 @@ args = ["/path/to/google-multi-mcp/dist/index.js"]</pre></div>
       <span>Made by <a href="https://usecockpit.co">Cockpit</a>, OXYGENE NUMERIQUE. MIT license.</span>
       <nav aria-label="Legal"><a href="https://github.com/dathims/google-multi-mcp" class="gh"><img src="../assets/github.svg" width="16" height="16" alt="">GitHub</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
     </div>
-    <p class="trademarks">Product names and logos belong to their respective owners and are used only to show compatibility: Google, Gmail, Google Calendar, Google Drive and Gemini (Google LLC), Claude (Anthropic PBC), ChatGPT and Codex (OpenAI), Cursor (Anysphere), GitHub and Copilot (GitHub, Inc.), Goose (Block, Inc.), Docker (Docker, Inc.). Cockpit plugins are independent projects, not affiliated with or endorsed by any of them.</p>
+    <p class="trademarks">Product names and logos belong to their respective owners and are used only to show compatibility: Google, Gmail, Google Calendar, Google Drive and Gemini (Google LLC), Claude (Anthropic PBC), Codex (OpenAI), Cursor (Anysphere), GitHub and Copilot (GitHub, Inc.), Goose (Block, Inc.), Docker (Docker, Inc.). Cockpit plugins are independent projects, not affiliated with or endorsed by any of them.</p>
   </div>
 </footer>
 </body>

@@ -167,3 +167,9 @@ dl.publisher dd { margin: 0; }
 .client h4 img { width: 18px; height: 18px; }
 .narrow .clients { grid-template-columns: 1fr; }
 @media (max-width: 860px) { .clients { grid-template-columns: 1fr; } }
+
+/* Docker alternative on the plugin page */
+.docker-card { margin-top: 40px; }
+.docker-card pre { margin-bottom: 4px; }
+.with-logo { display: flex; align-items: center; gap: 10px; }
+.with-logo img { width: 24px; height: 24px; }
