@@ -21,16 +21,16 @@ npm start
 npm run check
 ```
 
-`npm run check` vérifie les liens internes et l'absence de tirets longs. La CI le lance avant chaque publication.
+`npm run check` vérifie les liens internes et l'absence de tirets longs. La CI GitHub Actions le lance sur chaque push et chaque pull request.
 
-## Publication sur GitLab Pages
+## Publication sur GitHub Pages
 
-1. Pousser ce dépôt sur GitLab : le job `pages` de `.gitlab-ci.yml` publie `public/` sur la branche par défaut.
-2. Dans **Deploy > Pages**, ajouter le domaine `plugin.usecockpit.co`.
-3. Chez le registrar de `usecockpit.co`, créer les deux enregistrements indiqués par GitLab :
-   - `CNAME plugin` vers `<namespace>.gitlab.io`
-   - `TXT _gitlab-pages-verification-code.plugin` avec le code de vérification
-4. Activer le certificat Let's Encrypt automatique et « Force HTTPS ».
+Dépôt : <https://github.com/dathims/cockpit-marketplace>
+
+1. Chaque push sur `main` lance `.github/workflows/pages.yml` : contrôle du site, puis publication de `public/`.
+2. Le domaine personnalisé `plugin.usecockpit.co` est déclaré dans **Settings > Pages**.
+3. Chez le registrar de `usecockpit.co`, un enregistrement `CNAME plugin` pointe vers `dathims.github.io`.
+4. Une fois le DNS propagé, cocher **Enforce HTTPS** dans **Settings > Pages**.
 
 ## Ajouter un plugin
 

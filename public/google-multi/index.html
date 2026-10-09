@@ -16,7 +16,7 @@
   <nav aria-label="Main navigation">
     <a href="#install">Install</a>
     <a href="#tools" class="hide-sm">Tools</a>
-    <a href="https://gitlab.com/usecockpit/google-multi-mcp">Source code <span aria-hidden="true">↗</span></a>
+    <a href="https://github.com/dathims/google-multi-mcp">Source code <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
@@ -32,7 +32,7 @@
     <p class="lead">Claude's built-in connectors link one Google account each. This open source MCP server links all of them: personal, work, side projects. Ask once, and Claude searches every inbox, merges every agenda and sends from the right address.</p>
     <div class="actions">
       <a class="button" href="#install">Install it</a>
-      <a class="button ghost" href="https://gitlab.com/usecockpit/google-multi-mcp">Read the code <span aria-hidden="true">↗</span></a>
+      <a class="button ghost" href="https://github.com/dathims/google-multi-mcp">Read the code <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 
@@ -60,7 +60,7 @@
     <p class="lead">About 15 minutes, once. You need Node.js 20 or later and a Google account to host the OAuth client.</p>
     <ol class="steps">
       <li><div><h3>Get the code</h3><p>Clone the repository and build it.</p>
-<pre><span class="p">$ </span>git clone https://gitlab.com/usecockpit/google-multi-mcp.git
+<pre><span class="p">$ </span>git clone https://github.com/dathims/google-multi-mcp.git
 <span class="p">$ </span>cd google-multi-mcp &amp;&amp; npm install &amp;&amp; npm run build</pre></div></li>
       <li><div><h3>Create your Google OAuth client</h3><p>In Google Cloud, create a project, enable the Gmail, Google Calendar and Google Drive APIs, configure the consent screen as External, then create an OAuth client of type <strong>Desktop app</strong> and download its JSON file.</p>
 <pre><span class="p">$ </span>mkdir -p ~/.config/google-multi-mcp
