@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cockpit plugins · Open source MCP servers for Claude</title>
-<meta name="description" content="Open source MCP servers by Cockpit. Run them on your own machine and give Claude access to your tools, without sending your data to anyone else.">
+<title>Cockpit plugins · Open source MCP servers for every AI agent</title>
+<meta name="description" content="Open source MCP servers by Cockpit. Run them on your own machine and connect your tools to Claude, Codex, Cursor, Gemini CLI or any agent that speaks the Model Context Protocol.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="assets/mark.svg">
 <link rel="stylesheet" href="style.css">
@@ -15,16 +15,16 @@
   <a class="wordmark" href="./" aria-label="Cockpit plugins home"><img src="assets/mark.svg" width="32" height="32" alt=""><span>cockpit</span><small>plugins</small></a>
   <nav aria-label="Main navigation">
     <a href="#plugins">Plugins</a>
-    <a href="https://github.com/dathims/google-multi-mcp" class="hide-sm">Source code</a>
-    <a href="https://usecockpit.co">usecockpit.co <span aria-hidden="true">↗</span></a>
+    <a href="#agents" class="hide-sm">Agents</a>
+    <a href="https://github.com/dathims/cockpit-marketplace" class="gh"><img src="assets/github.svg" width="16" height="16" alt="">Source code</a>
   </nav>
 </header>
 
 <main id="main">
   <section class="hero wrap">
     <p class="eyebrow">Cockpit plugins</p>
-    <h1>Plug your tools<br>into Claude.</h1>
-    <p class="lead">Open source MCP servers built by the Cockpit team. They run on your own computer, talk directly to the services you already use, and never route your data through our servers.</p>
+    <h1>Plug your tools<br>into any AI agent.</h1>
+    <p class="lead">Open source MCP servers built by the Cockpit team. They speak the Model Context Protocol, the open standard supported by Claude, Codex, Cursor, Gemini CLI and many more. They run on your own computer and never route your data through our servers.</p>
     <div class="actions">
       <a class="button" href="#plugins">Browse plugins</a>
       <a class="button ghost" href="https://usecockpit.co">Discover Cockpit <span aria-hidden="true">↗</span></a>
@@ -35,13 +35,13 @@
     <h2 id="plugins-title">Plugins</h2>
     <div class="grid">
       <a class="card" href="google-multi/">
-        <div class="logo-pair" aria-label="Google and Claude">
-          <span class="logo"><img src="assets/google.svg" width="24" height="24" alt="Google"></span>
-          <span class="plus" aria-hidden="true">+</span>
-          <span class="logo"><img src="assets/claude.svg" width="24" height="24" alt="Claude"></span>
+        <div class="service-logos" aria-label="Gmail, Google Calendar and Google Drive">
+          <span class="logo"><img src="assets/gmail.svg" width="24" height="24" alt="Gmail"></span>
+          <span class="logo"><img src="assets/google-calendar.svg" width="24" height="24" alt="Google Calendar"></span>
+          <span class="logo"><img src="assets/google-drive.svg" width="24" height="24" alt="Google Drive"></span>
         </div>
         <h3>Google Multi-Account</h3>
-        <p>Connect every Gmail, Google Calendar and Google Drive account you own to Claude at once. Search all inboxes, merge all agendas, pick the right sender every time.</p>
+        <p>Connect every Gmail, Google Calendar and Google Drive account you own to your AI agent at once. Search all inboxes, merge all agendas, pick the right sender every time.</p>
         <div class="tags"><span class="tag oss">Open source</span><span class="tag">Gmail</span><span class="tag">Calendar</span><span class="tag">Drive</span></div>
         <span class="more">See the plugin <span aria-hidden="true">→</span></span>
       </a>
@@ -52,10 +52,26 @@
     </div>
   </section>
 
+  <section class="block wrap" id="agents" aria-labelledby="agents-title">
+    <h2 id="agents-title">Works with your agent</h2>
+    <p class="lead">One plugin, every compatible client. Install it once and use it from the agent you prefer, or from several at the same time.</p>
+    <div class="agents">
+      <div class="agent"><span class="logo"><img src="assets/claude.svg" width="24" height="24" alt=""></span><div><b>Claude</b><span>Anthropic</span></div></div>
+      <div class="agent"><span class="logo"><img src="assets/codex.svg" width="24" height="24" alt=""></span><div><b>Codex</b><span>OpenAI</span></div></div>
+      <div class="agent"><span class="logo"><img src="assets/cursor.svg" width="24" height="24" alt=""></span><div><b>Cursor</b><span>Anysphere</span></div></div>
+      <div class="agent"><span class="logo"><img src="assets/gemini.svg" width="24" height="24" alt=""></span><div><b>Gemini CLI</b><span>Google</span></div></div>
+      <div class="agent"><span class="logo"><img src="assets/copilot.svg" width="24" height="24" alt=""></span><div><b>GitHub Copilot</b><span>VS Code agent mode</span></div></div>
+      <div class="agent"><span class="logo"><img src="assets/goose.svg" width="24" height="24" alt=""></span><div><b>Goose</b><span>Block</span></div></div>
+      <div class="agent later"><span class="logo"><img src="assets/chatgpt.svg" width="24" height="24" alt=""></span><div><b>ChatGPT <span class="soon">Soon</span></b><span>OpenAI</span></div></div>
+      <div class="agent later"><span class="logo"><img src="assets/docker.svg" width="24" height="24" alt=""></span><div><b>Docker <span class="soon">Soon</span></b><span>MCP Toolkit</span></div></div>
+    </div>
+    <p class="note">Plugins run locally over stdio, which every client above supports. ChatGPT connects to remote MCP servers over HTTPS and Docker runs them as containers: both are on the roadmap.</p>
+  </section>
+
   <section class="block wrap" aria-labelledby="principles-title">
     <h2 id="principles-title">How we build them</h2>
     <div class="features">
-      <div class="feature"><h3>Local first</h3><p>Plugins run as a process on your machine. Your emails, events and files go from the provider to your computer, and nowhere else.</p></div>
+      <div class="feature"><h3>Local first</h3><p>Plugins run as a process on your machine. Your emails, events and files go from the provider to your computer, then to the agent you chose, and nowhere else.</p></div>
       <div class="feature"><h3>Your credentials</h3><p>You create your own OAuth client. Tokens stay in your home folder, readable only by you, and can be revoked at any time.</p></div>
       <div class="feature"><h3>Readable code</h3><p>Small, focused codebases under the MIT license. Read every line before you give it access to your accounts.</p></div>
     </div>
@@ -66,9 +82,9 @@
   <div class="wrap">
     <div class="row">
       <span>Made by <a href="https://usecockpit.co">Cockpit</a>, OXYGENE NUMERIQUE.</span>
-      <nav aria-label="Legal"><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
+      <nav aria-label="Legal"><a href="https://github.com/dathims/cockpit-marketplace" class="gh"><img src="assets/github.svg" width="16" height="16" alt="">GitHub</a><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
     </div>
-    <p class="trademarks">Google, Gmail, Google Calendar and Google Drive are trademarks of Google LLC. Claude is a trademark of Anthropic PBC. Cockpit plugins are independent projects, not affiliated with or endorsed by Google or Anthropic.</p>
+    <p class="trademarks">Product names and logos belong to their respective owners and are used only to show compatibility: Google, Gmail, Google Calendar, Google Drive and Gemini (Google LLC), Claude (Anthropic PBC), ChatGPT and Codex (OpenAI), Cursor (Anysphere), GitHub and Copilot (GitHub, Inc.), Goose (Block, Inc.), Docker (Docker, Inc.). Cockpit plugins are independent projects, not affiliated with or endorsed by any of them.</p>
   </div>
 </footer>
 </body>

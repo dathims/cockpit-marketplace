@@ -57,14 +57,6 @@ h3 { font-size: 18px; font-weight: 600; letter-spacing: -.01em; margin: 0 0 6px;
 .hero { padding: 64px 0 56px; }
 section.block { padding: 56px 0; border-top: 1px solid var(--line); }
 
-/* Logo pair: Google + Claude */
-.logo-pair { display: inline-flex; align-items: center; gap: 10px; }
-.logo-pair .logo { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #fff; border: 1px solid var(--line); }
-.logo-pair .logo img { width: 24px; height: 24px; }
-.logo-pair .plus { color: var(--muted); font-size: 18px; }
-.logo-pair.large { display: flex; width: fit-content; gap: 14px; margin-bottom: 28px; }
-.logo-pair.large .logo { width: 72px; height: 72px; border-radius: 20px; }
-.logo-pair.large .logo img { width: 38px; height: 38px; }
 
 /* Cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
@@ -140,3 +132,38 @@ dl.publisher dd { margin: 0; }
 /* Bullet list used on plugin pages */
 .legal-list { padding-left: 20px; margin: 0 0 20px; display: grid; gap: 10px; font-size: 16px; line-height: 1.6; }
 .legal-list strong { font-weight: 600; }
+
+/* GitHub icon inside links and buttons */
+.gh { display: inline-flex; align-items: center; gap: 7px; }
+.gh img { width: 16px; height: 16px; }
+.button .gh img { width: 18px; height: 18px; }
+.button:not(.ghost) .gh img { filter: invert(1); }
+
+/* Service logos (Gmail, Calendar, Drive) */
+.service-logos { display: flex; align-items: center; gap: 10px; }
+.service-logos .logo, .agent .logo, .feature .logo {
+  display: grid; place-items: center; width: 44px; height: 44px; flex: none;
+  border-radius: 12px; background: #fff; border: 1px solid var(--line);
+}
+.service-logos .logo img, .agent .logo img, .feature .logo img { width: 24px; height: 24px; object-fit: contain; }
+.service-logos.large { margin-bottom: 28px; gap: 14px; }
+.service-logos.large .logo { width: 72px; height: 72px; border-radius: 20px; }
+.service-logos.large .logo img { width: 40px; height: 40px; }
+.feature .logo { margin-bottom: 16px; }
+
+/* Works with: MCP clients */
+.agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.agent { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.agent b { display: block; font-size: 15px; font-weight: 600; }
+.agent span { font-size: 13px; color: var(--muted); }
+.agent.later { background: transparent; border-style: dashed; }
+.agent.later .logo img { opacity: .55; }
+.soon { display: inline-block; font-size: 11px; font-weight: 600; color: var(--ink); background: var(--yellow); border-radius: 20px; padding: 1px 8px; margin-left: 4px; vertical-align: 1px; }
+.note { font-size: 14px; color: var(--muted); margin: 18px 0 0; max-width: 720px; }
+
+/* Client configuration snippets */
+.clients { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 8px; }
+.client h4 { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; margin: 0 0 8px; }
+.client h4 img { width: 18px; height: 18px; }
+.narrow .clients { grid-template-columns: 1fr; }
+@media (max-width: 860px) { .clients { grid-template-columns: 1fr; } }

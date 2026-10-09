@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Multi-Account for Claude · Cockpit plugins</title>
-<meta name="description" content="An open source MCP server that connects several Gmail, Google Calendar and Google Drive accounts to Claude at the same time. Runs locally, uses your own OAuth client.">
+<title>Google Multi-Account MCP server · Cockpit plugins</title>
+<meta name="description" content="An open source MCP server that connects several Gmail, Google Calendar and Google Drive accounts to Claude, Codex, Cursor or any MCP client at the same time. Runs locally, uses your own OAuth client.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="../assets/mark.svg">
 <link rel="stylesheet" href="../style.css">
@@ -16,32 +16,32 @@
   <nav aria-label="Main navigation">
     <a href="#install">Install</a>
     <a href="#tools" class="hide-sm">Tools</a>
-    <a href="https://github.com/dathims/google-multi-mcp">Source code <span aria-hidden="true">↗</span></a>
+    <a href="https://github.com/dathims/google-multi-mcp" class="gh"><img src="../assets/github.svg" width="16" height="16" alt="">Source code</a>
   </nav>
 </header>
 
 <main id="main">
   <section class="hero wrap">
-    <div class="logo-pair large" aria-label="Google and Claude">
-      <span class="logo"><img src="../assets/google.svg" width="38" height="38" alt="Google"></span>
-      <span class="plus" aria-hidden="true">+</span>
-      <span class="logo"><img src="../assets/claude.svg" width="38" height="38" alt="Claude"></span>
+    <div class="service-logos large" aria-label="Gmail, Google Calendar and Google Drive">
+      <span class="logo"><img src="../assets/gmail.svg" width="40" height="40" alt="Gmail"></span>
+      <span class="logo"><img src="../assets/google-calendar.svg" width="40" height="40" alt="Google Calendar"></span>
+      <span class="logo"><img src="../assets/google-drive.svg" width="40" height="40" alt="Google Drive"></span>
     </div>
     <p class="eyebrow">Google Multi-Account</p>
-    <h1>Every Google account.<br>One Claude.</h1>
-    <p class="lead">Claude's built-in connectors link one Google account each. This open source MCP server links all of them: personal, work, side projects. Ask once, and Claude searches every inbox, merges every agenda and sends from the right address.</p>
+    <h1>Every Google account.<br>Any AI agent.</h1>
+    <p class="lead">Built-in AI connectors usually link one Google account each. This open source MCP server links all of them, personal, work and side projects, to any agent that speaks MCP. Ask once, and your agent searches every inbox, merges every agenda and sends from the right address.</p>
     <div class="actions">
       <a class="button" href="#install">Install it</a>
-      <a class="button ghost" href="https://github.com/dathims/google-multi-mcp">Read the code <span aria-hidden="true">↗</span></a>
+      <a class="button ghost" href="https://github.com/dathims/google-multi-mcp"><span class="gh"><img src="../assets/github.svg" width="18" height="18" alt="">Read the code</span></a>
     </div>
   </section>
 
   <section class="block wrap" aria-labelledby="features-title">
-    <h2 id="features-title">What Claude can do with it</h2>
+    <h2 id="features-title">What your agent can do with it</h2>
     <div class="features">
-      <div class="feature"><h3>Gmail</h3><p>Search with Gmail syntax across one or all accounts, read messages and threads, draft or send replies that stay in the thread, archive and label.</p></div>
-      <div class="feature"><h3>Google Calendar</h3><p>List calendars, see a single agenda merged across every account to spot conflicts, create, update and delete events, add Google Meet links.</p></div>
-      <div class="feature"><h3>Google Drive</h3><p>Search by name or full text, including shared drives. Read Docs, Slides and plain text files, and Sheets as CSV. Read only.</p></div>
+      <div class="feature"><span class="logo"><img src="../assets/gmail.svg" width="24" height="24" alt=""></span><h3>Gmail</h3><p>Search with Gmail syntax across one or all accounts, read messages and threads, draft or send replies that stay in the thread, archive and label.</p></div>
+      <div class="feature"><span class="logo"><img src="../assets/google-calendar.svg" width="24" height="24" alt=""></span><h3>Google Calendar</h3><p>List calendars, see a single agenda merged across every account to spot conflicts, create, update and delete events, add Google Meet links.</p></div>
+      <div class="feature"><span class="logo"><img src="../assets/google-drive.svg" width="24" height="24" alt=""></span><h3>Google Drive</h3><p>Search by name or full text, including shared drives. Read Docs, Slides and plain text files, and Sheets as CSV. Read only.</p></div>
     </div>
   </section>
 
@@ -51,13 +51,13 @@
     <div class="grid">
       <div class="card"><h3>Reads can span everything</h3><p>"Summarize my unread mail from this week on all my accounts." Each account is queried in parallel, and one failing account never blocks the others.</p></div>
       <div class="card"><h3>Writes are always explicit</h3><p>Sending an email or changing an event requires a single, named account. "all" is refused, so a work email never leaves from your personal address by accident.</p></div>
-      <div class="card"><h3>One connector or several</h3><p>Run one server for every account, or one instance per account with <code class="inline">--accounts=work</code> to toggle each one separately in Claude.</p></div>
+      <div class="card"><h3>One connector or several</h3><p>Run one server for every account, or one instance per account with <code class="inline">--accounts=work</code> to toggle each one separately in your client.</p></div>
     </div>
   </section>
 
   <section class="block narrow" id="install" aria-labelledby="install-title">
     <h2 id="install-title">Install</h2>
-    <p class="lead">About 15 minutes, once. You need Node.js 20 or later and a Google account to host the OAuth client.</p>
+    <p class="lead">About 15 minutes, once. You need Node.js 20 or later, a Google account to host the OAuth client, and an MCP client such as Claude, Codex, Cursor or Gemini CLI.</p>
     <ol class="steps">
       <li><div><h3>Get the code</h3><p>Clone the repository and build it.</p>
 <pre><span class="p">$ </span>git clone https://github.com/dathims/google-multi-mcp.git
@@ -70,8 +70,24 @@
 <pre><span class="p">$ </span>npm run add-account -- perso
 <span class="p">$ </span>npm run add-account -- work
 <span class="p">$ </span>npm run check-accounts</pre></div></li>
-      <li><div><h3>Connect it to Claude</h3><p>Claude Code, in one command. For Claude Desktop, add the same command to <code class="inline">claude_desktop_config.json</code> and restart the app.</p>
-<pre><span class="p">$ </span>claude mcp add google-multi -s user -- node "$PWD/dist/index.js"</pre></div></li>
+      <li><div><h3>Connect it to your agent</h3><p>Point your MCP client at <code class="inline">dist/index.js</code>. Replace the path with the absolute path of your clone.</p>
+<div class="clients">
+<div class="client"><h4><img src="../assets/claude.svg" width="18" height="18" alt="">Claude Code</h4>
+<pre><span class="p">$ </span>claude mcp add google-multi -s user -- node /path/to/google-multi-mcp/dist/index.js</pre></div>
+<div class="client"><h4><img src="../assets/codex.svg" width="18" height="18" alt="">Codex, in ~/.codex/config.toml</h4>
+<pre>[mcp_servers.google-multi]
+command = "node"
+args = ["/path/to/google-multi-mcp/dist/index.js"]</pre></div>
+</div>
+<p>Claude Desktop (<code class="inline">claude_desktop_config.json</code>), Cursor (<code class="inline">~/.cursor/mcp.json</code>) and Gemini CLI (<code class="inline">~/.gemini/settings.json</code>) share the same format:</p>
+<pre>{
+  "mcpServers": {
+    "google-multi": {
+      "command": "node",
+      "args": ["/path/to/google-multi-mcp/dist/index.js"]
+    }
+  }
+}</pre></div></li>
     </ol>
   </section>
 
@@ -114,9 +130,9 @@
   <div class="wrap">
     <div class="row">
       <span>Made by <a href="https://usecockpit.co">Cockpit</a>, OXYGENE NUMERIQUE. MIT license.</span>
-      <nav aria-label="Legal"><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
+      <nav aria-label="Legal"><a href="https://github.com/dathims/google-multi-mcp" class="gh"><img src="../assets/github.svg" width="16" height="16" alt="">GitHub</a><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a></nav>
     </div>
-    <p class="trademarks">Google, Gmail, Google Calendar and Google Drive are trademarks of Google LLC. Claude is a trademark of Anthropic PBC. Cockpit plugins are independent projects, not affiliated with or endorsed by Google or Anthropic.</p>
+    <p class="trademarks">Product names and logos belong to their respective owners and are used only to show compatibility: Google, Gmail, Google Calendar, Google Drive and Gemini (Google LLC), Claude (Anthropic PBC), ChatGPT and Codex (OpenAI), Cursor (Anysphere), GitHub and Copilot (GitHub, Inc.), Goose (Block, Inc.), Docker (Docker, Inc.). Cockpit plugins are independent projects, not affiliated with or endorsed by any of them.</p>
   </div>
 </footer>
 </body>
