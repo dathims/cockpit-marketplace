@@ -1,0 +1,17 @@
+# Publication du site statique public/ sur GitLab Pages.
+check:
+  stage: test
+  image: node:24-alpine
+  script:
+    - node scripts/check.mjs
+
+pages:
+  stage: deploy
+  image: node:24-alpine
+  script:
+    - node scripts/check.mjs
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

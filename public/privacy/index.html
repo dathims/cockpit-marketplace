@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · Cockpit plugins</title>
+<meta name="description" content="How Cockpit plugins, including Google Multi-Account, handle your data and Google user data.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="../assets/mark.svg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="../" aria-label="Cockpit plugins home"><img src="../assets/mark.svg" width="32" height="32" alt=""><span>cockpit</span><small>plugins</small></a>
+  <nav aria-label="Main navigation"><a href="../#plugins">Plugins</a><a href="../terms/">Terms</a></nav>
+</header>
+
+<main id="main" class="legal narrow">
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy policy</h1>
+  <p class="updated">Last updated: October 9, 2026</p>
+
+  <div class="callout"><p><strong>In short:</strong> Cockpit plugins run on your own computer. OXYGENE NUMERIQUE never receives, stores or sees your emails, calendar events, files or Google credentials. This website uses no cookies and no analytics.</p></div>
+
+  <h2>1. Who we are</h2>
+  <p>This policy covers the website plugin.usecockpit.co and the open source software published on it ("Cockpit plugins"), including the Google Multi-Account MCP server ("google-multi"). They are published by OXYGENE NUMERIQUE, SAS, 111 avenue Victor Hugo, 75016 Paris, France, RCS Paris 749 947 297. Contact for any privacy question: <a href="mailto:rudy@oxynum.fr">rudy@oxynum.fr</a>.</p>
+
+  <h2>2. This website</h2>
+  <p>The website is a set of static pages hosted by GitLab Pages. It sets no cookies, loads no analytics, advertising or third-party scripts, and has no forms. As the hosting provider, GitLab processes standard technical logs (such as IP address, date and requested page) to deliver and secure the service, under its own privacy policy.</p>
+
+  <h2>3. How google-multi works</h2>
+  <p>google-multi is software you install and run on your own computer. It connects to Google APIs using an OAuth client that you create in your own Google Cloud project, and exposes tools to the AI assistant you choose to connect it to, such as Claude.</p>
+  <p>There is no Cockpit server between Google and you. OXYGENE NUMERIQUE does not operate any backend for this software, does not collect telemetry, and has no technical way to access your data.</p>
+
+  <h2>4. Google user data accessed</h2>
+  <p>When you add a Google account, you grant the following permissions to your own OAuth client:</p>
+  <ul>
+    <li><strong>Basic profile (openid, email):</strong> your email address, used to label the account you connected.</li>
+    <li><strong>Gmail (gmail.modify):</strong> read, search and label messages and threads, create drafts and send emails, when you ask your assistant to. It cannot permanently delete messages.</li>
+    <li><strong>Google Calendar (calendar):</strong> list calendars and events, create, update and delete events, when you ask your assistant to.</li>
+    <li><strong>Google Drive (drive.readonly):</strong> search files and read their content. Read only.</li>
+  </ul>
+
+  <h2>5. How Google user data is used</h2>
+  <ul>
+    <li>Google user data is used only to provide the features you request through your AI assistant: searching, reading, drafting, sending, scheduling.</li>
+    <li>When a tool runs, its result is returned on your computer to the AI assistant client you connected. That client may send it to its AI provider (for example Anthropic for Claude) to answer your request. This transfer happens at your direction and is governed by that provider's terms and privacy policy.</li>
+    <li>Google user data is never sold, never used for advertising, and never used by OXYGENE NUMERIQUE to develop, improve or train artificial intelligence or machine learning models.</li>
+    <li>No human at OXYGENE NUMERIQUE reads your Google user data.</li>
+  </ul>
+
+  <div class="callout"><p>google-multi's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p></div>
+
+  <h2>6. Storage and security</h2>
+  <ul>
+    <li>OAuth tokens are stored only on your computer, in <code class="inline">~/.config/google-multi-mcp</code>, with file permissions restricting access to your user account.</li>
+    <li>Emails, events and files are processed in memory to answer a request. google-multi does not keep a copy of them on disk.</li>
+    <li>Sign-in uses OAuth 2.0 with PKCE and state verification. All connections to Google use HTTPS.</li>
+  </ul>
+
+  <h2>7. Retention and deletion</h2>
+  <p>OXYGENE NUMERIQUE retains no Google user data. On your computer, tokens are kept until you remove them. To delete them, run <code class="inline">npm run remove-account -- &lt;alias&gt;</code> or delete the folder above. To revoke access on Google's side at any time, visit <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+  <h2>8. Sharing</h2>
+  <p>We do not share Google user data with anyone, because we never receive it. The only transfer is the one described in section 5, to the AI assistant you choose, at your request.</p>
+
+  <h2>9. Your rights</h2>
+  <p>Under the GDPR you have rights of access, rectification, erasure, restriction, objection and portability. Since we hold no personal data from the software, most requests can be fulfilled directly on your computer as described above. For any question, write to <a href="mailto:rudy@oxynum.fr">rudy@oxynum.fr</a>. You may also lodge a complaint with the CNIL (<a href="https://www.cnil.fr">cnil.fr</a>).</p>
+
+  <h2>10. Children</h2>
+  <p>Cockpit plugins are not directed to children under 16.</p>
+
+  <h2>11. Changes</h2>
+  <p>If this policy changes, the new version will be published on this page with a new date. Significant changes affecting Google user data will also be noted in the project repository.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="row">
+      <span>Made by <a href="https://usecockpit.co">Cockpit</a>, OXYGENE NUMERIQUE.</span>
+      <nav aria-label="Legal"><a href="./">Privacy</a><a href="../terms/">Terms</a></nav>
+    </div>
+    <p class="trademarks">Google, Gmail, Google Calendar and Google Drive are trademarks of Google LLC. Claude is a trademark of Anthropic PBC. Cockpit plugins are independent projects, not affiliated with or endorsed by Google or Anthropic.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cockpit plugins · Open source MCP servers for Claude</title>
+<meta name="description" content="Open source MCP servers by Cockpit. Run them on your own machine and give Claude access to your tools, without sending your data to anyone else.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" href="assets/mark.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="./" aria-label="Cockpit plugins home"><img src="assets/mark.svg" width="32" height="32" alt=""><span>cockpit</span><small>plugins</small></a>
+  <nav aria-label="Main navigation">
+    <a href="#plugins">Plugins</a>
+    <a href="https://gitlab.com/usecockpit/google-multi-mcp" class="hide-sm">Source code</a>
+    <a href="https://usecockpit.co">usecockpit.co <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <p class="eyebrow">Cockpit plugins</p>
+    <h1>Plug your tools<br>into Claude.</h1>
+    <p class="lead">Open source MCP servers built by the Cockpit team. They run on your own computer, talk directly to the services you already use, and never route your data through our servers.</p>
+    <div class="actions">
+      <a class="button" href="#plugins">Browse plugins</a>
+      <a class="button ghost" href="https://usecockpit.co">Discover Cockpit <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="block wrap" id="plugins" aria-labelledby="plugins-title">
+    <h2 id="plugins-title">Plugins</h2>
+    <div class="grid">
+      <a class="card" href="google-multi/">
+        <div class="logo-pair" aria-label="Google and Claude">
+          <span class="logo"><img src="assets/google.svg" width="24" height="24" alt="Google"></span>
+          <span class="plus" aria-hidden="true">+</span>
+          <span class="logo"><img src="assets/claude.svg" width="24" height="24" alt="Claude"></span>
+        </div>
+        <h3>Google Multi-Account</h3>
+        <p>Connect every Gmail, Google Calendar and Google Drive account you own to Claude at once. Search all inboxes, merge all agendas, pick the right sender every time.</p>
+        <div class="tags"><span class="tag oss">Open source</span><span class="tag">Gmail</span><span class="tag">Calendar</span><span class="tag">Drive</span></div>
+        <span class="more">See the plugin <span aria-hidden="true">→</span></span>
+      </a>
+      <div class="card soon">
+        <h3>More plugins soon</h3>
+        <p>Each plugin follows the same rules: local first, your own credentials, readable code.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" aria-labelledby="principles-title">
+    <h2 id="principles-title">How we build them</h2>
+    <div class="features">
+      <div class="feature"><h3>Local first</h3><p>Plugins run as a process on your machine. Your emails, events and files go from the provider to your computer, and nowhere else.</p></div>
+      <div class="feature"><h3>Your credentials</h3><p>You create your own OAuth client. Tokens stay in your home folder, readable only by you, and can be revoked at any time.</p></div>
+      <div class="feature"><h3>Readable code</h3><p>Small, focused codebases under the MIT license. Read every line before you give it access to your accounts.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="row">
+      <span>Made by <a href="https://usecockpit.co">Cockpit</a>, OXYGENE NUMERIQUE.</span>
+      <nav aria-label="Legal"><a href="privacy/">Privacy</a><a href="terms/">Terms</a></nav>
+    </div>
+    <p class="trademarks">Google, Gmail, Google Calendar and Google Drive are trademarks of Google LLC. Claude is a trademark of Anthropic PBC. Cockpit plugins are independent projects, not affiliated with or endorsed by Google or Anthropic.</p>
+  </div>
+</footer>
+</body>
+</html>

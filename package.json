@@ -1,0 +1,10 @@
+{
+  "name": "usecockpit-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site plugin.usecockpit.co : marketplace des serveurs MCP open source de Cockpit",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "start": "npx --yes serve@14.2.4 public -l 4720"
+  }
+}
