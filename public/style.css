@@ -158,7 +158,6 @@ dl.publisher dd { margin: 0; }
 .agent span { font-size: 13px; color: var(--muted); }
 .agent.later { background: transparent; border-style: dashed; }
 .agent.later .logo img { opacity: .55; }
-.soon { display: inline-block; font-size: 11px; font-weight: 600; color: var(--ink); background: var(--yellow); border-radius: 20px; padding: 1px 8px; margin-left: 4px; vertical-align: 1px; }
 .note { font-size: 14px; color: var(--muted); margin: 18px 0 0; max-width: 720px; }
 
 /* Client configuration snippets */
