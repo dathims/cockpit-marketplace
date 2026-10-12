@@ -1,29 +1,60 @@
-# plugin.usecockpit.co
+# Cockpit plugins
 
-Site statique de la marketplace des serveurs MCP open source de [Cockpit](https://usecockpit.co).
+Source of [plugin.usecockpit.co](https://plugin.usecockpit.co), the marketplace of open source MCP servers built by [Cockpit](https://usecockpit.co).
 
-| Page | Rôle |
+[![Home page of the marketplace: the hero and the list of plugins](docs/screenshots/home.png)](https://plugin.usecockpit.co)
+
+Each plugin is a [Model Context Protocol](https://modelcontextprotocol.io) server that connects your tools to the AI agent you already use. Plugins run on your own machine, with your own credentials, and never route your data through Cockpit servers.
+
+## Plugins
+
+| Plugin | What it does | Page | Source |
+|---|---|---|---|
+| Google Multi-Account | Connects several Gmail, Google Calendar and Google Drive accounts to your agent at once | [plugin.usecockpit.co/google-multi](https://plugin.usecockpit.co/google-multi/) | [dathims/google-multi-mcp](https://github.com/dathims/google-multi-mcp) |
+
+## A tour of the marketplace
+
+### One plugin, every compatible agent
+
+Plugins run locally over stdio, so they work with Claude, Codex, Cursor, Gemini CLI, GitHub Copilot, Goose and any other MCP client. Each one also ships as a Docker image.
+
+![The "Works with your agent" section, listing the supported MCP clients](docs/screenshots/agents.png)
+
+### A page per plugin
+
+Every plugin has its own page: what the agent can do with it, how to install it, the tools it exposes and how it handles your data.
+
+[![Page of the Google Multi-Account plugin](docs/screenshots/plugin-google-multi.png)](https://plugin.usecockpit.co/google-multi/)
+
+## Pages
+
+| Page | Purpose |
 |---|---|
-| `/` | Accueil et liste des plugins |
-| `/google-multi/` | Plugin Google Multi-Account (Gmail, Agenda, Drive, plusieurs comptes) |
-| `/privacy/` | Politique de confidentialité, conforme au règlement Google API Services (Limited Use) |
-| `/terms/` | Conditions d'utilisation et mentions légales |
+| `/` | Home page and list of plugins |
+| `/google-multi/` | Google Multi-Account plugin (Gmail, Calendar, Drive, several accounts) |
+| `/privacy/` | Privacy policy, compliant with the Google API Services User Data Policy (Limited Use) |
+| `/terms/` | Terms of use and legal notice |
 
-## Développement
+## Development
 
-Aucune étape de build : le site est dans `public/`.
+There is no build step: the site lives in `public/`.
+
+Serve it locally on <http://localhost:4720>:
 
 ```bash
 npm start
 ```
 
+Check it before pushing:
+
 ```bash
 npm run check
 ```
 
-`npm run check` vérifie les liens internes et l'absence de tirets longs. La CI GitHub Actions le lance sur chaque push et chaque pull request.
+`npm run check` verifies the internal links and rejects long dashes (en and em dashes). GitHub Actions runs it on every push and every pull request.
 
+## Adding a plugin
 
-## Ajouter un plugin
-
-Créer `public/<plugin>/index.html` en copiant `public/google-multi/index.html`, puis ajouter sa carte dans la grille de `public/index.html`.
+1. Create `public/<plugin>/index.html` by copying `public/google-multi/index.html`.
+2. Add its card to the grid in `public/index.html`.
+3. Add a row to the [Plugins](#plugins) and [Pages](#pages) tables above.

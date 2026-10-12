@@ -1,4 +1,4 @@
-# Vérifie puis publie le site statique public/ sur GitHub Pages.
+# Checks, then publishes the static site in public/ to GitHub Pages.
 name: Pages
 
 on:
