@@ -148,14 +148,20 @@ dl.publisher dd { margin: 0; }
 .service-logos .logo img, .agent .logo img, .feature .logo img { width: 24px; height: 24px; object-fit: contain; }
 .feature .logo { margin-bottom: 16px; }
 
-/* Plugin logo, shown in the hero next to the services it connects */
-.plugin-identity { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
-.plugin-logo {
-  display: grid; place-items: center; width: 88px; height: 88px; flex: none;
-  border-radius: 24px; background: #fff; border: 1px solid var(--line);
+/* Plugin hero: the copy, then a diagram of the accounts reaching the agents through the plugin */
+.flow { width: 100%; max-width: 540px; height: auto; margin-top: 44px; overflow: visible; }
+.flow .wires { fill: none; stroke: var(--yellow); stroke-width: 2.5; stroke-linecap: round; }
+.flow .tile { fill: var(--surface); stroke: var(--line); }
+.flow .chip, .flow .hub { fill: #fff; stroke: var(--line); }
+.flow .label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; fill: var(--muted); }
+.flow .alias { font: 600 14px ui-monospace, "SF Mono", Menlo, monospace; text-anchor: middle; fill: var(--ink); }
+.flow .mail { font-size: 13px; fill: var(--muted); }
+@media (min-width: 981px) {
+  .hero.split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+  .hero.split h1 { font-size: clamp(40px, 4.8vw, 56px); }
+  .hero.split .lead { font-size: 18px; }
+  .flow { margin-top: 0; justify-self: end; }
 }
-.plugin-logo img { width: 64px; height: 64px; }
-.plugin-identity .service-logos { padding-left: 18px; border-left: 1px solid var(--line); }
 
 /* Works with: MCP clients */
 .agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }

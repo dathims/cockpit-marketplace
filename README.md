@@ -53,6 +53,8 @@ npm run check
 
 `npm run check` verifies the internal links and rejects long dashes (en and em dashes). GitHub Actions runs it on every push and every pull request.
 
+When you change `public/style.css`, bump the `?v=` value of the stylesheet link in every page. GitHub Pages lets browsers keep the file for 10 minutes, and a new page loaded with the previous stylesheet looks broken.
+
 ## Adding a plugin
 
 1. Create `public/<plugin>/index.html` by copying `public/google-multi/index.html`.
